@@ -3,12 +3,13 @@ package carolineeklund.portfolio.config;
 import carolineeklund.portfolio.models.Project;
 import carolineeklund.portfolio.repositories.ProjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
-public class ProjectSeeder {
+public class ProjectSeeder implements CommandLineRunner {
 
     private final ProjectRepository projectRepository;
 
