@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -28,4 +29,21 @@ public class ProjectController {
         List<Project> projects = projectService.getAllProjects();
         return ResponseEntity.ok(projects);
     }
+
+    @GetMapping("/projects/{id}")
+    public ResponseEntity <Project> getProject(@PathVariable String id) {
+        Project project = projectService.getProject(id);
+        if (project != null) {
+            return ResponseEntity.ok(project);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+//    @GetMapping("/projects/{id}")
+//    public ResponseEntity <Project> getProjectByName(String name) {
+//        Project project = projectService.getProject(name);
+//        return ResponseEntity.ok(project);
+//    }
+
 }
