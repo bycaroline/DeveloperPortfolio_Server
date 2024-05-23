@@ -12,7 +12,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @NoArgsConstructor
 @Document(collection = "about")
 public class About {
-    private String description;
+    private String descriptionParagraph1;
+    private String descriptionParagraph2;
     private String image;
     private String contact;
     private String title;
