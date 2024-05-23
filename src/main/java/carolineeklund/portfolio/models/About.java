@@ -14,4 +14,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class About {
     private String description;
     private String image;
+    private String contact;
+    private String title;
 }
