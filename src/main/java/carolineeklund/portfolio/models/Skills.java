@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "skills")
+@Document(collection = "myskills")
 public class Skills {
     @Id
     private String id;

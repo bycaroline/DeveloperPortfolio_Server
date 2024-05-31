@@ -5,6 +5,8 @@ import carolineeklund.portfolio.repositories.AboutRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AboutService {
 
@@ -15,42 +17,76 @@ public class AboutService {
         this.aboutRepository = aboutRepository;
     }
 
-    public String getAbout() {
-        return aboutRepository.findAll().get(0).getDescriptionParagraph1();
+    public List<About> getAllAbout() {
+        return aboutRepository.findAll();
     }
 
+    //titlePart1
+    public String getTitlePart1() {
+        return aboutRepository.findAll().get(0).getTitlePart1();
+    }
+
+    public void updateTitlePart1(String titlePart1) {
+        About about = aboutRepository.findAll().get(0);
+        if (titlePart1 != null && !titlePart1.isEmpty()){
+            about.setTitlePart1(titlePart1);
+            aboutRepository.save(about);
+        }
+    }
+
+    //titlePart2
+    public String getTitlePart2() {
+        return aboutRepository.findAll().get(0).getTitlePart2();
+    }
+
+    public void updateTitlePart2(String titlePart2) {
+        About about = aboutRepository.findAll().get(0);
+        if (titlePart2 != null && !titlePart2.isEmpty()) {
+            about.setTitlePart2(titlePart2);
+            aboutRepository.save(about);
+        }
+    }
+
+    //Paragraph1
+    public String getDescriptionParagraph1() {
+        About about = aboutRepository.findAll().get(0);
+        String descriptionParagraph1 = about.getDescriptionParagraph1();
+        return descriptionParagraph1;
+    }
+
+    public void updateDescriptionParagraph1(String descriptionParagraph1) {
+        About about = aboutRepository.findAll().get(0);
+        if (descriptionParagraph1 != null && !descriptionParagraph1.isEmpty()) {
+            about.setDescriptionParagraph1(descriptionParagraph1);
+            aboutRepository.save(about);
+        }
+    }
+
+    //Paragraph2
     public String getDescriptionParagraph2() {
-        return aboutRepository.findAll().get(0).getDescriptionParagraph2();
+        About about = aboutRepository.findAll().get(0);
+        return about.getDescriptionParagraph2();
     }
 
-    public String getContact() {
-        return aboutRepository.findAll().get(0).getContact();
+    public void updateDescriptionParagraph2(String descriptionParagraph2) {
+        About about = aboutRepository.findAll().get(0);
+        if (descriptionParagraph2 != null && !descriptionParagraph2.isEmpty()) {
+            about.setDescriptionParagraph2(descriptionParagraph2);
+            aboutRepository.save(about);
+        }
     }
 
-    public String getTitle() {
-        return aboutRepository.findAll().get(0).getTitle();
-    }
-
-    public String getImage() {
-        return aboutRepository.findAll().get(0).getImage();
-    }
-
-    public void updateAbout(String descriptionParagraph1, String descriptionParagraph2, String contact, String title, String image) {
-        aboutRepository.findAll().get(0).setDescriptionParagraph1(descriptionParagraph1);
-        aboutRepository.findAll().get(0).setDescriptionParagraph2(descriptionParagraph2);
-        aboutRepository.findAll().get(0).setContact(contact);
-        aboutRepository.findAll().get(0).setTitle(title);
-        aboutRepository.findAll().get(0).setImage(image);
-        aboutRepository.save(aboutRepository.findAll().get(0));
-    }
-
-    public void deleteAbout() {
-        aboutRepository.deleteAll();
-    }
-
-    public void createAbout(String descriptionParagraph1, String descriptionParagraph2, String contact, String title, String image) {
-        aboutRepository.save(new About(descriptionParagraph1, descriptionParagraph2, contact, title, image));
-    }
+    //PUT testing instead
+//    public void updateDescriptionParagraph2(String descriptionParagraph2) {
+//        List<About> aboutList = aboutRepository.findAll();
+//        if (!aboutList.isEmpty()) {
+//            About about = aboutList.get(0);
+//            if (descriptionParagraph2 != null && !descriptionParagraph2.isEmpty()) {
+//                about.setDescriptionParagraph2(descriptionParagraph2);
+//                aboutRepository.save(about);
+//            }
+//        }
+//    }
 
 
 }
