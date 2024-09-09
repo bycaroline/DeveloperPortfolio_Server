@@ -1,26 +1,39 @@
-# Developer Portfolio Server Side
+# Developer Portfolio Client Side
 
 ## Description
 
-This project showcases my work as a developer. Projects, skills and texts are retreived from the Java backend server and displayed in the React frontend.
+This project showcases my work as a developer. Projects, skills and texts are retreived from this Java backend server. 
 
+Authentication will be set up for Admin to be able to do crud operations on the projects directly in the user interface. 
+
+## Features
+- **Listing Projects**: A list of all the projects  
+- **Authentication**: JWT will be set up for logging in
+- **CRUD for Admin**: Possible to create, list, update and delete projects
+
+## Technologies
+- **Backend**: Java
+- **Frontend**: https://github.com/bycaroline/DeveloperPortfolio_Client
+- **Database**: MongoDB
+
+## Licens
+Caroline Eklund holds the license. 
 
 ## Installation
 
 To install this project, clone the repository and run the following commands:
 
-git clone https://github.com/bycaroline/DeveloperPortfolio_Server
-cd DeveloperPortfolio_Server
+git clone https://github.com/bycaroline/DeveloperPortfolio_Client
+cd DeveloperPortfolio_Client
 
-## Technologies
+## Features
 
-- **Backend**: Java with Spring Boot
-- **Databas**: MongoDB
-- **Frontend**: React
+- User authentication with Spring Security
+- Database storage in MongoDB Atlas
 
 ## License
 
-This project is created by Caroline Eklund and she holds the license.
+This project is created by Caroline Eklund and she holds the license. 
 
 ## Contact
 
